@@ -1,0 +1,57 @@
+Why JWT?
+
+    When a webservice uses application of another service internally then implementation of webservice remains important.
+    In this way, we secure our application using a token which has a particular period of validity.
+
+    JWT stands for Json Web Token.
+    It is clear that the Token holds the data in the form of JSON only.
+    stateless authentication
+
+Stateless and Stateful authentication?
+    Both happen in client server concept in which server provides service(data) to client only after autherntication.
+    Here, client can be both browser or another server
+
+    Stateless-
+    client sends reqquest to server - from service
+    login to server
+    server generates the token (data in encoded format) and sends to client with response. That is during first request
+    server generates the token after validating login info
+
+    While making another request - client sends the same token again to server along with request.
+    server validates the token
+
+    If token is not valid, then server asks client to login again
+
+    token is valid for a certain time period and then expires. this time period can be reconfigured.
+
+What is Token, what is JWT authentication all about and what is the benifit of using it?
+     Token - data in encoded format. generated using a secret key
+     JWT - JSON Web Token.
+     It is a standard mechnanism to generate token
+
+     JWT has 3 parts - Header, payload and signature
+     Each part is saperated by comma. It is an open source API. It is cross language concept.
+
+     Header: contain JWT specific information
+     Payload: contains claims (Client Id, Client Name, Issue Name, Audience Name, Date of Issue, Expiry Date etc)
+     Signature: Base64 encoded form of Header and Payload
+
+How does JWT Authentication work?
+ client request logIN - server generates a JWT and sends to client along with response.
+ The client sends the same token in later requests.
+
+ The JWT token is valid for reconfigurable amount of time only.
+
+ server requires the secret key everytime to decode the token.
+
+How to generate an encoded token as JWT and decode it(read and claims) again?
+     Here claim is a process of reading or parsing JWT details by providing two inputs: Token and secret key.
+
+     In order to implement the POC(Proof of Concept) on how to generate & read claims back, we should think of finding a
+     Java API for JWT.
+
+     Undoubtedly we have jjwt.jar to make it possible. Now lets create a POC to implement our functionality step by step.
+
+
+
+
